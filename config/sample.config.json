@@ -18,7 +18,8 @@
 			"author_name": "Examle Author",
 			"author_email": "Example Email",
 			"post_header": "PostHeader",
-			"pre_footer": "PreFooter"
+			"pre_footer": "PreFooter",
+			"session_secret": "Something secret"
 		}
 	}
 }

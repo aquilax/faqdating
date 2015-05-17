@@ -25,7 +25,7 @@ func (fn appHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 
 func (d *Dating) indexHandler(w http.ResponseWriter, r *http.Request) error {
 	sc := d.config.getSiteConfig(d.getToken(r))
-	s := NewSession(sc, d.tp.Get(sc.Language))
+	s := NewSession(r, sc, d.tp.Get(sc.Language))
 	s.AddPath("", s.Lang("Home"))
-	return s.render(w, r, sc.templatePath("layout.html"), sc.templatePath("index.html"))
+	return s.render(w, sc.templatePath("layout.html"), sc.templatePath("index.html"))
 }
