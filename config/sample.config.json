@@ -1,0 +1,24 @@
+{
+	"server": ":8080",
+	"database": "sqlite3",
+	"dsn": "./db/test.sqlite",
+	"translations": "./translations/",
+	"token": "X-Server",
+	"post_block_expire": "10s",
+	"servers": {
+		"": {
+			"domain_id": 1,
+			"analytics": "UA-X",
+			"domain": "example.com",
+			"language": "en_US",
+			"language_code": "en",
+			"css": "style.css",
+			"title": "Default site",
+			"description": "This is the default listboard site",
+			"author_name": "Examle Author",
+			"author_email": "Example Email",
+			"post_header": "PostHeader",
+			"pre_footer": "PreFooter"
+		}
+	}
+}

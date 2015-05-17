@@ -29,6 +29,7 @@ func NewSession(sc *SiteConfig, ln *Language) *Session {
 func NewTemplateData(sc *SiteConfig) TemplateData {
 	td := make(TemplateData)
 	td.Set("Title", sc.Title)
+	td.Set("LanguageCode", sc.LanguageCode)
 	td.Set("Description", sc.Description)
 	td.Set("ShowVote", false)
 	td.Set("Css", sc.Css)
