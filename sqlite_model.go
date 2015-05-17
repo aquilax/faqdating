@@ -18,3 +18,11 @@ func (m *SQLiteModel) Init(config *Config) error {
 	m.db, err = sqlx.Connect(config.Database, config.Dsn)
 	return err
 }
+
+func (m *SQLiteModel) RegisterUser(email, password string) (int, error) {
+	return 1, nil
+}
+
+func (m *SQLiteModel) LoginUser(email, password string) (int, error) {
+	return 1, nil
+}

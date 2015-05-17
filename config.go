@@ -20,12 +20,12 @@ type Config struct {
 }
 
 type SiteConfig struct {
-	DomainId      int    `json:"domain_id"`
+	DomainID      int    `json:"domain_id"`
 	Analytics     string `json:"analytics"`
 	Domain        string `json:"domain"`
 	Language      string `json:"language"`
 	LanguageCode  string `json:"language_code"`
-	Css           string `json:"css"`
+	CSS           string `json:"css"`
 	Title         string `json:"title"`
 	Description   string `json:"description"`
 	AuthorName    string `json:"author_name"`

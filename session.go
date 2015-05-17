@@ -10,7 +10,7 @@ import (
 const sessionName = "faqd"
 
 type PathLink struct {
-	Url   string
+	URL   string
 	Label string
 }
 
@@ -20,7 +20,7 @@ type Session struct {
 	ln     *Language
 	store  sessions.Store
 	path   []*PathLink
-	userId int
+	userID int
 }
 
 type TemplateData map[string]interface{}
@@ -41,7 +41,7 @@ func NewTemplateData(sc *SiteConfig) TemplateData {
 	td.Set("LanguageCode", sc.LanguageCode)
 	td.Set("Description", sc.Description)
 	td.Set("ShowVote", false)
-	td.Set("Css", sc.Css)
+	td.Set("Css", sc.CSS)
 	td.Set("FormTitle", "")
 	td.Set("Analytics", sc.Analytics)
 	td.Set("Domain", sc.Domain)
@@ -87,16 +87,16 @@ func (s *Session) AddPath(url, label string) {
 
 func (s *Session) Logged() bool {
 	session, _ := s.store.Get(s.r, sessionName)
-	userId, found := session.Values["userId"]
+	userID, found := session.Values["userId"]
 	if found {
-		s.userId, _ = strconv.Atoi(userId.(string))
+		s.userID, _ = strconv.Atoi(userID.(string))
 	}
 	return found
 }
 
-func (s *Session) logInUser(user *User, w http.ResponseWriter) {
+func (s *Session) logInUser(userID int, w http.ResponseWriter) {
 	session, _ := s.store.Get(s.r, sessionName)
-	session.Values["userId"] = user.ID
+	session.Values["userId"] = userID
 	session.Save(s.r, w)
 }
 

@@ -12,8 +12,6 @@ type Dating struct {
 	tp     *TransPool
 }
 
-type ValidationErrors []string
-
 func NewDating(c *Config) *Dating {
 	return &Dating{
 		config: c,
@@ -31,6 +29,9 @@ func (d *Dating) Run() {
 
 	r := mux.NewRouter()
 	r.HandleFunc("/", appHandler(d.indexHandler).ServeHTTP).Methods("GET")
+	r.HandleFunc("/auth/register.html", appHandler(d.authRegisterHandler).ServeHTTP).Methods("GET", "POST")
+	r.HandleFunc("/auth/login.html", appHandler(d.authLoginHandler).ServeHTTP).Methods("GET", "POST")
+	r.HandleFunc("/auth/logout.html", appHandler(d.authLogoutHandler).ServeHTTP).Methods("GET", "POST")
 
 	// Static assets
 	r.PathPrefix("/").Handler(http.FileServer(http.Dir("./public_html")))
