@@ -62,3 +62,7 @@ func (d *Dating) authLoginHandler(w http.ResponseWriter, r *http.Request) error 
 func (d *Dating) authLogoutHandler(w http.ResponseWriter, r *http.Request) error {
 	return nil
 }
+
+func (d *Dating) userProfileHandler(w http.ResponseWriter, r *http.Request) error {
+	return nil
+}
