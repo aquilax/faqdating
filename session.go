@@ -4,7 +4,6 @@ import (
 	"github.com/gorilla/sessions"
 	"html/template"
 	"net/http"
-	"strconv"
 )
 
 const sessionName = "faqd"
@@ -89,7 +88,7 @@ func (s *Session) Logged() bool {
 	session, _ := s.store.Get(s.r, sessionName)
 	userID, found := session.Values["userId"]
 	if found {
-		s.userID, _ = strconv.Atoi(userID.(string))
+		s.userID, _ = userID.(int)
 	}
 	return found
 }

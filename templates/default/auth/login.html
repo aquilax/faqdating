@@ -1,5 +1,5 @@
 {{define "content"}}
-	<h2>{{lang "Register"}}</h2>
+	<h2>{{lang "Login"}}</h2>
 	{{if .Errors }}
 		{{range .Errors}}
 			<p class=".error">{{.}}</p>
@@ -14,10 +14,6 @@
 			<label for="password">{{lang "Password"}}</label>
 			<input class="form-control" type="password" id="password" name="password" />
 		</div>
-		<div class="form-group">
-			<label for="password-confirm">{{lang "Confirm Password"}}</label>
-			<input class="form-control" type="password" id="password-confirm" name="password_confirm" />
-		</div>
-		<button type="submit" class="btn btn-primary">{{lang "Register"}}</button>
+		<button type="submit" class="btn btn-primary">{{lang "Login"}}</button>
 	</form>
 {{end}}
